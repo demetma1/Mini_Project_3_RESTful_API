@@ -3,11 +3,12 @@ services:
   database:
     container_name: postgres
     image: postgres:latest
-    env_file: src/database.conf
     ports:
       - 5432:5432
     volumes:
       - db_volume:/var/lib/postgresql
+  app:
+    build: .
 
 volumes:
   db_volume:
