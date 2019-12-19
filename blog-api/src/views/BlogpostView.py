@@ -23,7 +23,6 @@ def create():
     data = blogpost_schema.dump(post).data
     return custom_response(data, 201)
 
-
 @blogpost_api.route('/', methods=['GET'])
 def get_all():
     """
@@ -32,7 +31,6 @@ def get_all():
     posts = BlogpostModel.get_all_blogposts()
     data = blogpost_schema.dump(posts, many=True).data
     return custom_response(data, 200)
-
 
 @blogpost_api.route('/<int:blogpost_id>', methods=['GET'])
 def get_one(blogpost_id):
@@ -44,7 +42,6 @@ def get_one(blogpost_id):
         return custom_response({'error': 'post not found'}, 404)
     data = blogpost_schema.dump(post).data
     return custom_response(data, 200)
-
 
 @blogpost_api.route('/<int:blogpost_id>', methods=['PUT'])
 @Auth.auth_required

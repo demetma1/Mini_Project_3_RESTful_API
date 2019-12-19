@@ -3,7 +3,6 @@ from . import db
 import datetime
 from marshmallow import fields, Schema
 
-
 class BlogpostModel(db.Model):
     """
     Blogpost Model
@@ -49,7 +48,6 @@ class BlogpostModel(db.Model):
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
-
 
 class BlogpostSchema(Schema):
     """
