@@ -11,7 +11,6 @@ class Auth():
     """
     Auth Class
     """
-
     @staticmethod
     def generate_token(user_id):
         """
@@ -58,7 +57,6 @@ class Auth():
         """
         Auth decorator
         """
-
         @wraps(func)
         def decorated_auth(*args, **kwargs):
             if 'api-token' not in request.headers:
@@ -86,5 +84,4 @@ class Auth():
                 )
             g.user = {'id': user_id}
             return func(*args, **kwargs)
-
         return decorated_auth
